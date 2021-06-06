@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace MMCore\Middleware;
+namespace MmCore\Middleware;
 
 use MMCore\Exception\MMCoreHttpApiException;
 use Hyperf\HttpMessage\Stream\SwooleFileStream;

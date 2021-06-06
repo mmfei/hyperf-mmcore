@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace MMCore\Middleware;
+namespace MmCore\Middleware;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\HttpServer\Contract\RequestInterface;

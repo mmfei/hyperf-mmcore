@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace MMCore\Utils;
+namespace MmCore\Utils;
 
 use Hyperf\Utils\ApplicationContext;
 use Hyperf\Utils\Codec\Json;

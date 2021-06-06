@@ -1,6 +1,6 @@
 <?php
 
-namespace MMCore;
+namespace MmCore;
 
 class ConfigProvider
 {

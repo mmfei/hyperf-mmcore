@@ -7,6 +7,7 @@
  php ./bin/hyperf.php migrate
  php ./bin/hyperf.php gen:model user_auth
  php ./bin/hyperf.php gen:model user
+
  
 ```
 

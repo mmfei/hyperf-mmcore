@@ -9,7 +9,6 @@
             "email": "wlfkongl@163.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
         "hyperf/validation": "~2.2.0",

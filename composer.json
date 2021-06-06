@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MMCore\\": "src/"
+            "MmCore\\": "src/"
         }
     },
     "extra": {

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace MmCore\Controller;
+namespace Mmcore\Controller;
 
 use Hyperf\Contract\TranslatorInterface;
 use Hyperf\HttpServer\Contract\RequestInterface;

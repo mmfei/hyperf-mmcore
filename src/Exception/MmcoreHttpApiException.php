@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace MmCore\Exception;
+namespace Mmcore\Exception;
 
 use Hyperf\Server\Exception\ServerException;
 
-class MmCoreHttpApiException extends ServerException
+class MmcoreHttpApiException extends ServerException
 {
 }

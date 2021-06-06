@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace MmCore\Middleware;
+namespace Mmcore\Middleware;
 
-use MMCore\Exception\MmCoreHttpApiException;
+use MMCore\Exception\MmcoreHttpApiException;
 use Hyperf\HttpMessage\Stream\SwooleFileStream;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Hyperf\Utils\Codec\Json;
@@ -56,7 +56,7 @@ class HttpMiddleware implements MiddlewareInterface
             } else {
                 $data = $c;
             }
-        } catch (MmCoreHttpApiException $e) {
+        } catch (MmcoreHttpApiException $e) {
             $code = $e->getCode();
             $msg = $e->getMessage();
         } catch (UnauthorizedException $e) {

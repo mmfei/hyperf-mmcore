@@ -1,0 +1,24 @@
+{
+    "name": "mmfei/hyperf-mmcore",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mmfei",
+            "email": "wlfkongl@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "hyperf/validation": "2.2.x-dev",
+        "hyperf/cache": "2.2.x-dev",
+        "96qbhy/hyperf-auth": "dev-master",
+        "hyperf/translation": "2.2.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "MMCore\\": "src/"
+        }
+    }
+}

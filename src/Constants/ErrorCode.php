@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Mmcore\Constants;
+namespace MmCore\Constants;
 
 use Hyperf\Constants\AbstractConstants;
 use Hyperf\Constants\Annotation\Constants;

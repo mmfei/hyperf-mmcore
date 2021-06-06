@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Mmcore\Middleware;
+namespace MmCore\Middleware;
 
-use MMCore\Exception\MmcoreHttpApiException;
+use MMCore\Exception\MmCoreHttpApiException;
 use Hyperf\Validation\Middleware\ValidationMiddleware as HyperfValidationMiddleware;
 use Hyperf\Validation\ValidationException;
 use Psr\Http\Message\ResponseInterface;
@@ -25,7 +25,7 @@ class ValidationMiddleware extends HyperfValidationMiddleware
         try {
             return parent::process($request, $handler);
         } catch (ValidationException $e) {
-            throw new MmcoreHttpApiException($e->validator->getMessageBag()->first(), 400);
+            throw new MmCoreHttpApiException($e->validator->getMessageBag()->first(), 400);
         }
     }
 }

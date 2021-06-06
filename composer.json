@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mmcore\\": "src/"
+            "MmCore\\": "src/"
         }
     },
     "extra": {
         "hyperf": {
-            "config": "Mmcore\\ConfigProvider"
+            "config": "MmCore\\ConfigProvider"
         }
     }
 }

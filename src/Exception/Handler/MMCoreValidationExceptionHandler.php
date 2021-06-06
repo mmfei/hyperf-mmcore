@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Mmcore\Exception\Handler;
+namespace MmCore\Exception\Handler;
 
 use Dotenv\Exception\ValidationException;
 use Hyperf\ExceptionHandler\Handler\WhoopsExceptionHandler;

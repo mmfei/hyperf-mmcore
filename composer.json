@@ -20,5 +20,10 @@
         "psr-4": {
             "MMCore\\": "src/"
         }
+    },
+    "extra": {
+        "hyperf": {
+            "config": "MMCore\\ConfigProvider"
+        }
     }
 }

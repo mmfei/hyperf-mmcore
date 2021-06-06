@@ -3,6 +3,11 @@
  composer create-project hyperf/hyperf-skeleton your_project_name
  cd your_project_name
  composer require mmfei/hyperf-mmcore
+ php ./bin/hyperf.php vendor:publish mmfei/hyperf-mmcore
+ php ./bin/hyperf.php migrate
+ php ./bin/hyperf.php gen:model user_auth
+ php ./bin/hyperf.php gen:model user
+ 
 ```
 
 

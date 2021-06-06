@@ -27,49 +27,49 @@ class ConfigProvider
                     'id' => 'config auth',
                     'description' => 'description of this config file.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/config/autoload/auth.php',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/config/autoload/auth.php',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/config/autoload/auth.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'config cache',
                     'description' => 'description of this config file.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/config/autoload/cache.php',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/config/autoload/cache.php',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/config/autoload/cache.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'config cors',
                     'description' => 'description of this config file.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/config/autoload/cors_config.php',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/config/autoload/cors_config.php',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/config/autoload/cors_config.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'config translation',
                     'description' => 'description of this config file.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/config/autoload/translation.php',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/config/autoload/translation.php',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/config/autoload/translation.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'migrate user',
                     'description' => 'user auth.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/migrations/2021_06_06_134804_create_user_auth.php',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/migrations/2021_06_06_134804_create_user_auth.php',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/migrations/2021_06_06_134804_create_user_auth.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'model user',
                     'description' => 'model user auth.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/Model/UserAuth.php',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/Model/UserAuth.php',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/App/Model/UserAuth.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'storage',
                     'description' => 'storage.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/../publish/storage',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/storage',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/storage', // 复制为这个路径下的该文件
                 ],
             ],

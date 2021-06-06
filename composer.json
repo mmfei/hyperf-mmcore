@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "hyperf/validation": "~2.2.0",
+        "hyperf/validation": "~2.1.0",
         "hyperf/cache": "~2.1.0",
         "96qbhy/hyperf-auth": "dev-master",
         "hyperf/translation": "~2.2.0"

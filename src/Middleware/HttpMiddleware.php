@@ -22,6 +22,7 @@ use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Qbhy\HyperfAuth\Exception\UnauthorizedException;
 
 class HttpMiddleware implements MiddlewareInterface
 {
@@ -56,6 +57,9 @@ class HttpMiddleware implements MiddlewareInterface
                 $data = $c;
             }
         } catch (MMCoreHttpApiException $e) {
+            $code = $e->getCode();
+            $msg = $e->getMessage();
+        } catch (UnauthorizedException $e) {
             $code = $e->getCode();
             $msg = $e->getMessage();
         }

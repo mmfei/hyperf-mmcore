@@ -13,6 +13,6 @@ namespace MmCore\Exception;
 
 use Hyperf\Server\Exception\ServerException;
 
-class MMCoreHttpApiException extends ServerException
+class MmCoreHttpApiException extends ServerException
 {
 }

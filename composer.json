@@ -16,8 +16,7 @@
         "hyperf/cache": "~2.1.0",
         "96qbhy/hyperf-auth": "dev-master",
         "hyperf/translation": "2.2.x-dev",
-        "hyperf/constants": "2.2.x-dev",
-        "phpunit/phpunit": "9.5.x-dev"
+        "hyperf/constants": "~2.1.0"
     },
     "autoload": {
         "psr-4": {

@@ -1,5 +1,6 @@
 {
     "name": "mmfei/hyperf-mmcore",
+    "description": "一个通用方便的hyperf的基础框架",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,10 +13,11 @@
     "require": {
         "php": ">=7.0",
         "hyperf/validation": "2.2.x-dev",
-        "hyperf/cache": "2.2.x-dev",
+        "hyperf/cache": "~2.1.0",
         "96qbhy/hyperf-auth": "dev-master",
         "hyperf/translation": "2.2.x-dev",
-        "hyperf/constants": "2.2.x-dev"
+        "hyperf/constants": "2.2.x-dev",
+        "phpunit/phpunit": "9.5.x-dev"
     },
     "autoload": {
         "psr-4": {

@@ -1,4 +1,12 @@
 ```shell
+# how to start
+ composer create-project hyperf/hyperf-skeleton your_project_name
+ cd your_project_name
+ composer require mmfei/hyperf-mmcore
+```
+
+
+```shell
 composer require 96qbhy/hyperf-auth
 php bin/hyperf.php vendor:publish 96qbhy/hyperf-auth
 ```

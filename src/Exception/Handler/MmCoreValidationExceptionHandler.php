@@ -18,7 +18,7 @@ use Hyperf\Utils\Codec\Json;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
 
-class MMCoreValidationExceptionHandler extends WhoopsExceptionHandler
+class MmCoreValidationExceptionHandler extends WhoopsExceptionHandler
 {
     public function handle(Throwable $throwable, ResponseInterface $response)
     {

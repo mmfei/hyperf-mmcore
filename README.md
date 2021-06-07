@@ -11,6 +11,32 @@
  
 ```
 
+> 加入中间件
+```php
+# config/autoload/middlewares.php
+
+return [
+    'http' => [
+        \MmCore\Middleware\CorsMiddleware::class,
+        \MmCore\Middleware\ValidationMiddleware::class,
+        \MmCore\Middleware\HttpMiddleware::class,
+    ],
+];
+
+```
+> 修改异常处理
+```php
+# config/autoload/exceptions.php
+return [
+    'handler' => [
+        'http' => [
+            Hyperf\HttpServer\Exception\Handler\HttpExceptionHandler::class,
+            \MmCore\Exception\MmCoreHttpApiException::class,
+        ],
+    ],
+];
+```
+
 
 ```shell
 composer require 96qbhy/hyperf-auth
@@ -120,4 +146,16 @@ return [
         ],
     ],
 ];
+```
+
+
+> 一些建议
+
+```shell
+# 开发环境建议用以下方式
+## 安装热加载 @see https://hyperf.wiki/2.0/#/zh-cn/watcher?id=%e5%90%af%e5%8a%a8
+composer require hyperf/watcher --dev
+## 修改代码后立刻生效(注解无效,需要手动删除runtime文件夹) or `composer dump-autoload -o`
+touch 'SCAN_CACHEABLE=false' >> .env
+php ./bin/hyperf.php server:watch
 ```

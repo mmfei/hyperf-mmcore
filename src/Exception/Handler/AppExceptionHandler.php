@@ -11,8 +11,8 @@ declare(strict_types=1);
  */
 namespace MmCore\Exception\Handler;
 
-use MMCore\Utils\EnvUtil;
-use MMCore\Utils\LogUtil;
+use MmCore\Utils\EnvUtil;
+use MmCore\Utils\LogUtil;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\ExceptionHandler\ExceptionHandler;
 use Hyperf\HttpMessage\Stream\SwooleStream;

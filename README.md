@@ -30,7 +30,7 @@ return [
 return [
     'handler' => [
         'http' => [
-            Hyperf\HttpServer\Exception\Handler\HttpExceptionHandler::class,
+            \MmCore\Exception\Handler\AppExceptionHandler::class,
             \MmCore\Exception\MmCoreHttpApiException::class,
         ],
     ],

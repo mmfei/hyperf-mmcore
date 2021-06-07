@@ -39,9 +39,9 @@ class HttpMiddleware implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         try {
-            $msg = 'SUCCESS';
+            $msg = 'success';
             $data = (object)[];
-            $code = 200;
+            $code = 0;
             $response = $handler->handle($request);
             $body = $response->getBody();
             if($body instanceof SwooleFileStream) {

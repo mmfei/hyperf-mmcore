@@ -1,0 +1,21 @@
+[Unit]
+Description=demo守护进程
+After=network.target
+
+[Service]
+Environment="APP_ENV=test"
+Environment="SCAN_CACHEABLE=(true)"
+User=gitlab-runner
+Group=gitlab-runner
+Type=simple
+WorkingDirectory=/www/demo
+PIDFile=/www/demo/runtime/hyperf.pid
+#ExecStartPre=/usr/local/php/bin/php /www/demo/bin/hyperf.php migrate
+ExecStart=/usr/local/php/bin/php /www/demo/bin/hyperf.php start
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

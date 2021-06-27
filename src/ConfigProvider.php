@@ -27,7 +27,7 @@ class ConfigProvider
                     'id' => 'admin controller',
                     'description' => 'description of this admin controller file.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/publish/controller/SimpleCrudAdminController',  // 对应的配置文件路径
+                    'source' => __DIR__ . '/publish/Controller/SimpleCrudAdminController',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/app/Controller/SimpleCrudAdminController.php', // 复制为这个路径下的该文件
                 ],
                 [
@@ -69,8 +69,8 @@ class ConfigProvider
                     'id' => 'model user',
                     'description' => 'model user auth.', // 描述
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
-                    'source' => __DIR__ . '/publish/Model/UserAuth',  // 对应的配置文件路径
-                    'destination' => BASE_PATH . '/app/Model/UserAuth.php', // 复制为这个路径下的该文件
+                    'source' => __DIR__ . '/publish/app/Model/UserAuth.php',  // 对应的配置文件路径
+                    'destination' => BASE_PATH . '/App/Model/UserAuth.php', // 复制为这个路径下的该文件
                 ],
                 [
                     'id' => 'storage',
@@ -78,6 +78,20 @@ class ConfigProvider
                     // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
                     'source' => __DIR__ . '/publish/storage',  // 对应的配置文件路径
                     'destination' => BASE_PATH . '/storage', // 复制为这个路径下的该文件
+                ],
+                [
+                    'id' => 'SwaggerCommand',
+                    'description' => 'SwaggerCommand.', // 描述
+                    // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
+                    'source' => __DIR__ . '/publish/app/Command/SwaggerCommand.php',  // 对应的配置文件路径
+                    'destination' => BASE_PATH . '/App/Command/SwaggerCommand.php', // 复制为这个路径下的该文件
+                ],
+                [
+                    'id' => '.gitlab-ci',
+                    'description' => '.gitlab-ci.', // 描述
+                    // 建议默认配置放在 publish 文件夹中，文件命名和组件名称相同
+                    'source' => __DIR__ . '/publish/.gitlab-ci.yml',  // 对应的配置文件路径
+                    'destination' => BASE_PATH . '/.gitlab-ci.yml', // 复制为这个路径下的该文件
                 ],
             ],
             // 亦可继续定义其它配置，最终都会合并到与 ConfigInterface 对应的配置储存器中

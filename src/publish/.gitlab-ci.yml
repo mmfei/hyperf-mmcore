@@ -1,0 +1,74 @@
+stages:
+  - deploy_test
+  - cs-fix
+
+cs-fix:
+  stage: cs-fix
+  before_script:
+    - |
+      git config user.email "jenkins@abc.com"
+      git config user.name "jenkins"
+      echo "git checkout ${CI_COMMIT_REF_NAME} --";
+      git checkout ${CI_COMMIT_REF_NAME} --
+      git pull origin ${CI_COMMIT_REF_NAME}
+      cp .env.gitrunner .env
+  script:
+    - |
+      composer install
+      ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix .
+      has_change_local=`git status | grep -E '(Changes to be committed|Changes not staged for commit|Untracked files)' || true`
+      if [ ! -z "$has_change_local" ]; then
+        git add .
+        git commit -m 'auto code style fix'
+        echo "git push $CI_REPOSITORY_URL"
+        echo "git push "https://$CI_DEPLOY_USER:$CI_DEPLOY_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git" ${CI_COMMIT_REF_NAME}"
+        git push "https://$CI_DEPLOY_USER:$CI_DEPLOY_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git" ${CI_COMMIT_REF_NAME}
+      fi
+      echo 'done cs-fix';
+  only:
+    - master
+    - develop
+    - test
+  tags:
+    - build
+
+deploy_test:
+  stage: deploy_test
+  script:
+    - |
+      if [[ "$WEB_ROOT_PATH" == "" ]]; then
+        echo "EMPTY VAR WEB_ROOT_PATH";
+      else
+        if [[ ! -d "$WEB_ROOT_PATH" ]]; then
+          echo "git clone for a new project"
+          echo "git clone https://$CI_DEPLOY_USER:$CI_DEPLOY_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git $WEB_ROOT_PATH"
+          git clone https://$CI_DEPLOY_USER:$CI_DEPLOY_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git $WEB_ROOT_PATH
+        fi
+        echo "cd $WEB_ROOT_PATH"
+        cd "$WEB_ROOT_PATH"
+        git config pull.rebase false
+        echo "git checkout ${CI_COMMIT_REF_NAME} --";
+        git checkout ${CI_COMMIT_REF_NAME} --
+        git pull origin ${CI_COMMIT_REF_NAME}
+        cp $WEB_ROOT_PATH/.env.gitrunner $WEB_ROOT_PATH/.env
+        composer install
+        php ./bin/hyperf.php migrate
+        if [[ -f "${WEB_ROOT_PATH}runtime/hyperf.pid" ]] ; then
+          pid=`cat ${WEB_ROOT_PATH}runtime/hyperf.pid`
+        else
+          pid=''
+        fi
+        if [[ ! -z "$pid" ]]; then
+          echo "Restart service , kill $pid "
+          kill $pid
+        else
+          echo "!!!!Service is shutdown!!!!"
+        fi
+        composer gen-doc;
+        cp $SWAGGER_API_JSON_FILE_NAME $SWAGGER_ROOT_DIST_PATH
+      fi
+      echo 'finished';
+  only:
+    - test
+  tags:
+    - build

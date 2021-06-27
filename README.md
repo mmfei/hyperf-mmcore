@@ -31,7 +31,6 @@ return [
     'handler' => [
         'http' => [
             \MmCore\Exception\Handler\AppExceptionHandler::class,
-            \MmCore\Exception\MmCoreHttpApiException::class,
         ],
     ],
 ];
